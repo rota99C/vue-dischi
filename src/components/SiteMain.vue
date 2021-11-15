@@ -40,6 +40,9 @@ export default {
 #main {
   background-color: #1e2d3b;
   width: 100%;
-  height: calc(100vh - 70px);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 20px;
+  justify-content: center;
 }
 </style>

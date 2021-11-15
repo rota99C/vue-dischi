@@ -1,7 +1,7 @@
 <template>
   <div class="singolo">
     <img :src="image" alt="" />
-    <h5>{{ title }}</h5>
+    <h2>{{ title }}</h2>
     <p>{{ author }}</p>
     <p>{{ year }}</p>
   </div>
@@ -22,13 +22,22 @@ export default {
   width: 200px;
   height: 360px;
   background-color: #2e3a46;
+  text-align: center;
+  margin: 20px 20px;
+  padding: 15px;
 }
 img {
   width: 160px;
   height: 160px;
+  margin-bottom: 25px;
 }
-h5 {
+h2 {
   color: white;
   font-weight: lighter;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #808080;
 }
 </style>
