@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <Select @changeGenre="catchGenre" />
+    <Select @filterElement="filterGenre" />
     <div class="container-product">
       <Product
         v-for="song in songs"
@@ -35,6 +35,12 @@ export default {
       .catch((error) => {
         console.error(error);
       });
+  },
+  methods: {
+    filterGenre(value) {
+      this.selection = value;
+      console.log(value);
+    },
   },
   components: { Product, Select },
 };

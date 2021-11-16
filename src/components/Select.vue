@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <label for="genres">filtra per genere musicale </label>
-    <select>
+    <select v-model="selection" @change="changeSelection">
       <option value="tutti">Tutti</option>
       <option value="rock">Rock</option>
       <option value="pop">Pop</option>
@@ -12,7 +12,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      selection: "",
+    };
+  },
+  methods: {
+    changeSelection() {
+      this.$emit("filterElement", this.selection);
+      console.log(this.selection);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
