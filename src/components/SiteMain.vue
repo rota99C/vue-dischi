@@ -1,19 +1,23 @@
 <template>
   <div id="main">
-    <Product
-      v-for="song in songs"
-      :key="song.genre"
-      :image="song.poster"
-      :title="song.title"
-      :author="song.author"
-      :year="song.year"
-    />
+    <Select @changeGenre="catchGenre" />
+    <div class="container-product">
+      <Product
+        v-for="song in songs"
+        :key="song.genre"
+        :image="song.poster"
+        :title="song.title"
+        :author="song.author"
+        :year="song.year"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import Product from "./Product.vue";
+import Select from "./Select.vue";
 
 export default {
   data() {
@@ -32,7 +36,7 @@ export default {
         console.error(error);
       });
   },
-  components: { Product },
+  components: { Product, Select },
 };
 </script>
 
@@ -40,9 +44,12 @@ export default {
 #main {
   background-color: #1e2d3b;
   width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+}
+.container-product {
   display: flex;
   flex-wrap: wrap;
-  padding: 100px 20px;
   justify-content: center;
 }
 </style>
