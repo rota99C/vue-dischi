@@ -40,6 +40,10 @@ export default {
     filterGenre(value) {
       this.selection = value;
       console.log(value);
+      const filteredElements = this.songs.filter((song) => {
+        return song.genre.includes(value);
+      });
+      console.log(filteredElements);
     },
   },
   components: { Product, Select },
