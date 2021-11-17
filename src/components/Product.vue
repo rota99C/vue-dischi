@@ -13,6 +13,7 @@ export default {
     title: String,
     author: String,
     year: String,
+    song: Object,
   },
 };
 </script>
